@@ -6,8 +6,10 @@ N'hésitez pas à me suivre sur mes réseaux sociaux où je partage aussi ce cha
 
 ## Roadmap
 
-- Jour 1: C'est quoi DevOps ♾️ ? (culture, histoire, métier, ...)
-- Jour 2: Linux est ton ami
-- Jour 3: Scripting (bash + vim)
-- Jour 4: Langages de programmation - Python & Go
-- Jour 5: git, GitHub & GitLab
+- [Jour 1: C'est quoi DevOps ♾️ ? (culture, histoire, métier, ...)](./jour-1.md)
+- [Jour 2: Linux est ton ami](./jour-2.md)
+- [Jour 3: Scripting (bash + vim)](./jour-3.md)
+- [Jour 4: Langages de programmation - Python & Go](./jour-4.md)
+- [Jour 5: git, GitHub & GitLab](./jour-5.md)
+- [Jour 6: Conteneurs & Docker](./jour-6.md)
+- [Jour 7: Infrastructure & concepts réseau (proxy, load balancer, firewall, caching server)](./jour-7.md)
