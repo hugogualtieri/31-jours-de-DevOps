@@ -1,6 +1,6 @@
 # 31 jours de DevOps 🚀
 
-Bienvenue dans ce challenge '31 jours de DevOps' ! Ce repository contient toutes les ressources pour chaque jour.
+Bienvenue dans ce challenge `31 jours de DevOps` ! Ce repository contient toutes les ressources pour chaque jour.
 
 N'hésitez pas à me suivre sur mes réseaux sociaux où je partage aussi ce challenge [TikTok](https://www.tiktok.com/@hugo.log_) & [Instagram](https://www.instagram.com/hugo.log_/)
 
@@ -13,3 +13,5 @@ N'hésitez pas à me suivre sur mes réseaux sociaux où je partage aussi ce cha
 - [Jour 5: git, GitHub & GitLab](./jour-5.md)
 - [Jour 6: Conteneurs & Docker](./jour-6.md)
 - [Jour 7: Infrastructure & concepts réseau (proxy, load balancer, firewall, caching server)](./jour-7.md)
+- [Jour 8: Serveurs web (NGINX)](./jour-8.md)
+- [Jour 9: Protocoles réseaux (TCP/IP, HTTP/HTTPS, FTP, SMTP, UDP, etc...)](./jour-9.md)
