@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page_title }}</title>
+</head>
+<body>
+  <h1>{{ welcome_message }}</h1>
+  <p><strong>Nom d'hôte :</strong> {{ inventory_hostname }}</p>
+  <p><strong>Adresse IP :</strong> {{ ansible_default_ipv4.address }}</p>
+  <p><strong>Date :</strong> {{ ansible_date_time.date }} {{ ansible_date_time.time }}</p>
+  <p><em>Contact administrateur : {{ admin_contact }}</em></p>
+</body>
+</html>

@@ -1,0 +1,6 @@
+---
+- name: Déploiement Nginx sur EC2 Amazon Linux 2023
+  hosts: webservers
+  become: yes
+  roles:
+    - webserver

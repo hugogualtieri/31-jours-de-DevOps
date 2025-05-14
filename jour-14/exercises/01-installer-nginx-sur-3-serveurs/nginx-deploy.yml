@@ -1,0 +1,48 @@
+---
+- name: Déploiement Nginx sur EC2 Amazon Linux 2023
+  hosts: webservers
+  become: yes
+  vars:
+    nginx_pkg: nginx
+    www_root: /usr/share/nginx/html
+    index_src: files/index.html
+
+  tasks:
+    - name: Mettre à jour le cache des paquets sur RedHat (Amazon Linux)
+      dnf:
+        update_cache: yes
+      when: ansible_os_family == "RedHat"
+
+    - name: Installer Nginx
+      package:
+        name: "{{ nginx_pkg }}"
+        state: present
+
+    - name: S’assurer que le répertoire www existe
+      file:
+        path: "{{ www_root }}"
+        state: directory
+        owner: nginx
+        group: nginx
+        mode: '0755'
+
+    - name: Déployer la page d’accueil personnalisée
+      copy:
+        src: "{{ index_src }}"
+        dest: "{{ www_root }}/index.html"
+        owner: nginx
+        group: nginx
+        mode: '0644'
+      notify: Reload Nginx
+
+    - name: Activer et démarrer Nginx
+      service:
+        name: nginx
+        enabled: yes
+        state: started
+
+  handlers:
+    - name: Reload Nginx
+      service:
+        name: nginx
+        state: reloaded

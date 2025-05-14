@@ -1,0 +1,33 @@
+---
+- name: Mettre à jour le cache des paquets
+  dnf:
+    update_cache: yes
+  when: ansible_os_family == "RedHat"
+
+- name: Installer Nginx
+  package:
+    name: nginx
+    state: present
+
+- name: S'assurer que le répertoire www existe
+  file:
+    path: /usr/share/nginx/html
+    state: directory
+    owner: nginx
+    group: nginx
+    mode: "0755"
+
+- name: Déployer la page d'accueil personnalisée
+  template:
+    src: index.html.j2
+    dest: /usr/share/nginx/html/index.html
+    owner: nginx
+    group: nginx
+    mode: "0644"
+  notify: Reload Nginx
+
+- name: Activer et démarrer Nginx
+  service:
+    name: nginx
+    enabled: yes
+    state: started

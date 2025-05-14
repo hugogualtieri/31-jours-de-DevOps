@@ -18,3 +18,5 @@ N'hésitez pas à me suivre sur mes réseaux sociaux où je partage aussi ce cha
 - [Jour 10: Cloud providers (AWS, GCP, Azure)](./jour-10.md)
 - [Jour 11: Provisioning & Infrastructure as Code (Terraform)](./jour-11.md)
 - [Jour 12: Exercices Terraform](./jour-12/README.md)
+- [Jour 13: Configuration Management (Ansible)](./jour-13.md)
+- [Jour 14: Exercices Ansible](./jour-14/README.md)
