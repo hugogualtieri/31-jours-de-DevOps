@@ -1,0 +1,45 @@
+stages:
+  - test
+  - build
+  - deploy
+
+exercise_02_test_job:
+  image: node:22
+  stage: test
+  script:
+    - cd $FRONTEND_DIR
+    - npm install
+    - npm run test -- --coverage --watchAll=false
+  artifacts:
+    reports:
+      junit: coverage/clover.xml
+    paths:
+      - $FRONTEND_DIR/coverage/
+    expire_in: 1 week
+
+exercise_02_build_job:
+  image: node:22
+  stage: build
+  script:
+    - cd $FRONTEND_DIR
+    - npm install
+    - npm run build
+  artifacts:
+    paths:
+      - $FRONTEND_DIR/build/
+    expire_in: 1 week
+
+exercise_02_deploy_job:
+  image: node:22
+  stage: deploy
+  needs:
+    - job: exercise_02_build_job
+      artifacts: true
+  before_script:
+    - npm install -g netlify-cli
+  script:
+    - netlify deploy \
+        --site=$NETLIFY_SITE_ID \
+        --auth=$NETLIFY_AUTH_TOKEN \
+        --prod \
+        --dir=$FRONTEND_DIR/build

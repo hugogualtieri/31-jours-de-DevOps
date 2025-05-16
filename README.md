@@ -20,3 +20,5 @@ N'hésitez pas à me suivre sur mes réseaux sociaux où je partage aussi ce cha
 - [Jour 12: Exercices Terraform](./jour-12/README.md)
 - [Jour 13: Configuration Management (Ansible)](./jour-13.md)
 - [Jour 14: Exercices Ansible](./jour-14/README.md)
+- [Jour 15: Intégration continue & Déploiement continu (CI/CD)](./jour-15.md)
+- [Jour 16: Exercices GitLab CI/CD](./jour-16/README.md)

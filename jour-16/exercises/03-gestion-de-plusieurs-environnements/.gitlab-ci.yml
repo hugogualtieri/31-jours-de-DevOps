@@ -1,0 +1,55 @@
+stages:
+  - test
+  - build
+  - deploy
+
+exercise_03_test_job:
+  image: node:22
+  stage: test
+  script:
+    - cd $FRONTEND_DIR
+    - npm install
+    - npm run test -- --coverage --watchAll=false
+  artifacts:
+    reports:
+      junit: coverage/clover.xml
+    paths:
+      - $FRONTEND_DIR/coverage/
+    expire_in: 1 week
+
+exercise_03_build_job:
+  image: node:22
+  stage: build
+  script:
+    - cd $FRONTEND_DIR
+    - npm install
+    - npm run build
+  artifacts:
+    paths:
+      - $FRONTEND_DIR/build/
+    expire_in: 1 week
+
+exercise_03_deploy_job:
+  image: node:22
+  stage: deploy
+  needs:
+    - job: exercise_03_build_job
+      artifacts: true
+  before_script:
+    - npm install -g netlify-cli
+  script:
+    - if [ "$CI_COMMIT_BRANCH" = "main" ]; then
+        NETLIFY_ENV="prod";
+      elif [ "$CI_COMMIT_BRANCH" = "develop" ]; then
+        NETLIFY_ENV="dev";
+      else
+        echo "Not deploying from this branch.";
+        exit 0;
+      fi
+    - netlify deploy \
+        --site=$NETLIFY_SITE_ID_$NETLIFY_ENV \
+        --auth=$NETLIFY_AUTH_TOKEN \
+        --prod \
+        --dir=$FRONTEND_DIR/build
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main" || $CI_COMMIT_BRANCH == "develop"'
