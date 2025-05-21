@@ -22,3 +22,8 @@ N'hésitez pas à me suivre sur mes réseaux sociaux où je partage aussi ce cha
 - [Jour 14: Exercices Ansible](./jour-14/README.md)
 - [Jour 15: Intégration continue & Déploiement continu (CI/CD)](./jour-15.md)
 - [Jour 16: Exercices GitLab CI/CD](./jour-16/README.md)
+- [Jour 17: Secrets Management (Hashicorp Vault)](./jour-17.md)
+- [Jour 18: Exercices Hashicorp Vault](./jour-18/README.md)
+- [Jour 19: Infrastructure monitoring (Grafana, Prometheus, AlertManager)](./jour-19.md)
+- [Jour 20: Exercices Grafana/Prometheus/AlertManager](./jour-20/README.md)
+- [Jour 21: Gestion des logs (Grafana, Loki, Promtail)](./jour-21.md)
