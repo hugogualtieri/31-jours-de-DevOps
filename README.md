@@ -27,3 +27,4 @@ N'hésitez pas à me suivre sur mes réseaux sociaux où je partage aussi ce cha
 - [Jour 19: Infrastructure monitoring (Grafana, Prometheus, AlertManager)](./jour-19.md)
 - [Jour 20: Exercices Grafana/Prometheus/AlertManager](./jour-20/README.md)
 - [Jour 21: Gestion des logs (Grafana, Loki, Promtail)](./jour-21.md)
+- [Jour 22: Exercices Grafana/Loki/Promtail](./jour-22/README.md)

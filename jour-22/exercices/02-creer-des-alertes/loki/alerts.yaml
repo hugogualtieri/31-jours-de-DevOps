@@ -1,0 +1,11 @@
+groups:
+  - name: apt_logs_alerts
+    rules:
+      - alert: ErrorDetected
+        expr: count_over_time({job="apt_logs"} |= "ERROR" [1m]) > 0
+        for: 0m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Erreur détectée dans les logs de apt_logs"
+          description: "Une erreur a été détectée dans les logs du job apt_logs."

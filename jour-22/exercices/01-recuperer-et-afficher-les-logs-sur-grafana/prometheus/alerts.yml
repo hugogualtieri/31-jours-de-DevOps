@@ -1,0 +1,40 @@
+groups:
+  - name: node_alerts
+    rules:
+      - alert: HighMemoryUsage
+        expr: (node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / node_memory_MemTotal_bytes * 100 > 85
+        for: 5m
+        labels:
+          severity: warning
+          team: "Hugo"
+        annotations:
+          summary: "Haute utilisation mémoire sur {{ $labels.instance }}"
+          description: "Le serveur utilise {{ printf \"%.2f\" $value }}% de sa mémoire depuis 5 minutes"
+      - alert: HighCPUUsage
+        expr: 100 - (avg by (instance) (irate(node_cpu_seconds_total{mode="idle"}[5m])) * 100) > 50
+        for: 2m
+        labels:
+          severity: warning
+          team: "Hugo"
+        annotations:
+          summary: "Haute utilisation CPU sur {{ $labels.instance }}"
+          description: "Le serveur utilise {{ printf \"%.2f\" $value }}% de ses ressources CPU depuis 5 minutes"
+      - alert: LowDiskSpace
+        expr: (node_filesystem_size_bytes{mountpoint="/"} - node_filesystem_free_bytes{mountpoint="/"}) / node_filesystem_size_bytes{mountpoint="/"} * 100 > 85
+        for: 5m
+        labels:
+          severity: warning
+          team: "Hugo"
+        annotations:
+          summary: "Espace disque faible sur {{ $labels.instance }}"
+          description: "L'espace disque est utilisé à {{ printf \"%.2f\" $value }}% depuis 5 minutes"
+      - alert: ServiceDown
+        expr: up == 0
+        for: 2m
+        labels:
+          severity: critical
+          team: "Hugo"
+        annotations:
+          summary: "Service {{ $labels.job }} est down"
+          description: "Le service {{ $labels.job }} n'est pas accessible depuis 2 minutes"
+
