@@ -29,3 +29,5 @@ N'hésitez pas à me suivre sur mes réseaux sociaux où je partage aussi ce cha
 - [Jour 21: Gestion des logs (Grafana, Loki, Promtail)](./jour-21.md)
 - [Jour 22: Exercices Grafana/Loki/Promtail](./jour-22/README.md)
 - [Jour 23: Orchestration de conteneurs (Kubernetes)](./jour-23.md)
+- [Jour 24: Exercices Kubernetes (AWS EKS)](./jour-24/README.md)
+- [Jour 25: Application Monitoring](./jour-25.md)
