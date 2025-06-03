@@ -31,3 +31,7 @@ N'hésitez pas à me suivre sur mes réseaux sociaux où je partage aussi ce cha
 - [Jour 23: Orchestration de conteneurs (Kubernetes)](./jour-23.md)
 - [Jour 24: Exercices Kubernetes (AWS EKS)](./jour-24/README.md)
 - [Jour 25: Application Monitoring](./jour-25.md)
+- [Jour 26: Gestion des Artifacts (GitLab Artifacts)](./jour-26.md)
+- [Jour 27: GitOps (ArgoCD)](./jour-27.md)
+- [Jour 28: Service Mesh](./jour-28.md)
+- [Jour 29: Cloud design patterns](./jour-29.md)
